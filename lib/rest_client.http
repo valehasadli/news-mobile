@@ -1,0 +1,64 @@
+@BASE_URL=http://localhost/api
+@QUERY="amazon"
+@PREFERENCE_ID=1
+
+### Login Request
+POST {{BASE_URL}}}}/auth/login
+User-Agent: rest-client
+Content-Type: application/json
+
+{
+  "email": "email@admin.com",
+  "password": "secret1"
+}
+
+### Registration Request
+POST {{BASE_URL}}/auth/registration
+User-Agent: rest-client
+Content-Type: application/json
+
+{
+  "email": "email@admin.com",
+  "password": "secret1",
+  "password_confirmation": "secret1"
+}
+
+### Logout Request
+POST {{BASE_URL}}/auth/logout
+User-Agent: rest-client
+Content-Type: application/json
+
+### Profile Request
+GET {{BASE_URL}}/auth/profile
+User-Agent: rest-client
+Content-Type: application/json
+
+### Article Search
+GET {{BASE_URL}}/articles/search/query={{QUERY}}
+User-Agent: rest-client
+Content-Type: application/json
+
+### Create Preference Request
+POST {{BASE_URL}}/auth/preference
+User-Agent: rest-client
+Content-Type: application/json
+
+{
+  "data_source": "NewYorkTimes",
+  "author": "John Doe"
+}
+
+### Update Preference Request
+PUT {{BASE_URL}}/auth/preference/{{PREFERENCE_ID}}
+User-Agent: rest-client
+Content-Type: application/json
+
+{
+  "data_source": "NewYorkTimes",
+  "author": "John Doe"
+}
+
+### FEED Request
+GET {{BASE_URL}}/feed
+User-Agent: rest-client
+Content-Type: application/json
